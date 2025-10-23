@@ -1,0 +1,19 @@
+### Make event live
+POST http://localhost:8080/events/status
+Content-Type: application/json
+
+{
+  "eventId": "123",
+  "live": true
+}
+
+
+### Stop event
+POST http://localhost:8080/events/status
+Content-Type: application/json
+
+{
+  "eventId": "123",
+  "live": false
+}
+###

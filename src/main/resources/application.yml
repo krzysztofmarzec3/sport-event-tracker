@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: sport-event-task
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    template:
+      default-topic: sports-scores
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      retries: 5
+      properties:
+        acks: all
+        linger.ms: 5
+        enable.idempotence: true
+        retry.backoff.ms: 500      # wait between retries
+
+
+logging:
+  level:
+    com.sport: INFO
